@@ -144,6 +144,7 @@ STATICFILES_DIRS = (
 )
 
 
+
 # CKEditor
 CKEDITOR_BASEPATH = "/static/ckeditor/ckeditor/"
 CKEDITOR_UPLOAD_PATH = "uploads/"
