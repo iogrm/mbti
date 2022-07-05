@@ -77,31 +77,31 @@ WSGI_APPLICATION = 'mbti.wsgi.application'
 #     }
 # }
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'NAME': 'postgresql.mehrideveloper.svc',
-#         'USER': 'postgres',
-#         'PASSWORD': '0fL7PAs1ET84rKBR48qDqNLKgau1yBDF',
-#         'HOST': 'localhost',
-#         'PORT': '5432',
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'postgresql.mehrideveloper.svc',
+        'USER': 'postgres',
+        'PASSWORD': '0fL7PAs1ET84rKBR48qDqNLKgau1yBDF',
+        'HOST': 'localhost',
+        'PORT': '5432',
+    }
+}
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'mbtipg',
-        'USER': 'postgres',
-        'PASSWORD': 'hyZdyt-8huffi-voqqov',
-        'HOST': 'localhost',
-        'PORT': '5431',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'mbtipg',
+#         'USER': 'postgres',
+#         'PASSWORD': 'hyZdyt-8huffi-voqqov',
+#         'HOST': 'localhost',
+#         'PORT': '5431',
+#     }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
