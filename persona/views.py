@@ -212,22 +212,22 @@ class CharactersByMbtiAPIView(APIView):
 #                             status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 
-# class MbtiByUserAPIView(APIView):
-#     def get(self, request, format=None):
-#         try:
-#             user_id = request.GET['user_id']
-#             answers = user_id
-#             mbti = answers
+class MbtiByUserAPIView(APIView):
+    def get(self, request, format=None):
+        try:
+            user_id = request.GET['user_id']
+            answers = user_id
+            mbti = answers
 
-#             data = Character.objects.filter(mbti__title__contains=mbti)
-#             serialized_data = serializers.CharactersByMbtiSerializer(data, many=True)
-#             data = serialized_data.data
-#             return Response({'data': data}, status=status.HTTP_200_OK)
+            data = Character.objects.filter(mbti__title__contains=mbti)
+            serialized_data = serializers.CharactersByMbtiSerializer(data, many=True)
+            data = serialized_data.data
+            return Response({'data': data}, status=status.HTTP_200_OK)
 
-#         except Exception as e:
-#             print("error in exception is: ", e)
-#             return Response({'status': "Internal Server Error, We'll Check It Later"},
-#                             status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+        except Exception as e:
+            print("error in exception is: ", e)
+            return Response({'status': "Internal Server Error, We'll Check It Later"},
+                            status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 
 class SearchCharacterAPIView(APIView):
