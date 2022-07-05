@@ -90,7 +90,6 @@ class Question(models.Model):
 
 
 class Answer(models.Model):
-    answer_id = models.AutoField(primary_key=True)
     user = models.ForeignKey('UserProfile', on_delete=models.CASCADE)
     question = models.ForeignKey('Question', on_delete=models.CASCADE)
     time = models.TimeField(auto_now=False, auto_now_add=False)

@@ -12,7 +12,7 @@ admin.site.register(UserProfile, UserProfileAdmin)
 
 class CharacterAdmin(admin.ModelAdmin):
     search_fields = ['title', 'content']
-    list_display = ['name', 'title', 'category']
+    list_display = ['name', 'title', 'mbti', 'category']
 
 
 admin.site.register(Character, CharacterAdmin)
@@ -54,7 +54,7 @@ admin.site.register(Question, QuestionAdmin)
 
 
 class AnswerAdmin(admin.ModelAdmin):
-    list_display = ['answer_id', 'user', 'question', 'time', 'answer']
+    list_display = ['user', 'question', 'time', 'answer']
 
 
 admin.site.register(Answer, AnswerAdmin)
