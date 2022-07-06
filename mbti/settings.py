@@ -83,7 +83,7 @@ DATABASES = {
         'NAME': 'postgresql.mehrideveloper.svc',
         'USER': 'postgres',
         'PASSWORD': '0fL7PAs1ET84rKBR48qDqNLKgau1yBDF',
-        'HOST': 'postgresql',
+        'HOST': 'postgresql.mehrideveloper.svc',
         'PORT': '5432',
     }
 }
