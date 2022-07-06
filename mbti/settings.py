@@ -80,7 +80,7 @@ WSGI_APPLICATION = 'mbti.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'd3c4780a-aeca-4c3b-b02b-a7627d3d4fa3',
+        'NAME': 'postgres',
         'USER': 'postgres',
         'PASSWORD': '0fL7PAs1ET84rKBR48qDqNLKgau1yBDF',
         'HOST': 'postgresql.mehrideveloper.svc',
