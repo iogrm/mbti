@@ -113,6 +113,89 @@ def test_page(request):
         return render(request, 'mbti_test.html', context)
 
 
+class SignupPage(TemplateView):
+    def get(self, request, **kwargs):
+        form = SignupForm(request.GET or None)
+        error_css = {
+            'input_email_class': "",
+            'span_email_style': "display: none;",
+        }
+        if form.is_valid():
+            print("is valid")
+            first_name = form.cleaned_data.get("first_name")
+            sir_name = form.cleaned_data.get("sir_name")
+            email = form.cleaned_data.get("email")
+            mbti = Mbti.objects.filter(mbti__contains="xxxx")[0]
+            print(mbti)
+            users = UserProfile.objects.filter(email__contains=email)
+            if not users:
+                print('if not users:')
+                user = UserProfile()
+                user.first_name = first_name
+                user.sir_name = sir_name
+                user.email = email
+                user.mbti = mbti
+                user.save()
+                request.session['email'] = email
+                return redirect('test')
+
+        else:
+            print(form.errors)
+            print('else not users:')
+            error_css = {
+                'input_email_class': "error",
+                'span_email_style': "",
+            }
+
+        context = {
+            'form': form,
+            'error_css': error_css,
+        }
+
+        return render(request, 'signup.html', context)
+
+
+class LoginPage(TemplateView):
+    def get(self, request, **kwargs):
+        form = LoginForm(request.GET or None)
+        error_css = {
+            'input_email_class': "",
+            'span_email_style': "display: none;",
+        }
+        if form.is_valid():
+            print("login: form is valid")
+            email = form.cleaned_data.get("email")
+            user = UserProfile.objects.filter(email__contains=email)[0]
+            if user:
+                # user = LoginForm()
+                # user.email = email
+                request.session['email'] = email
+                print("login mbti: ", user.mbti.mbti)
+                if user.mbti.mbti == "xxxx":
+                    print('login to test: xxxx')
+                    return redirect('test')
+                else:
+                    print('login to passport')
+                    return redirect('passport')
+            else:
+                print(form.errors)
+                error_css = {
+                    'input_email_class': "error",
+                    'span_email_style': "",
+                }
+
+        context = {
+            'form': form,
+            'error_css': error_css,
+        }
+        return render(request, 'login.html', context)
+
+
+class AccountSettings(TemplateView):
+    def get(self, request, **kwargs):
+        return render(request, 'account_settings.html')
+
+
 class AllQuestionsAPIView(APIView):
     def get(self, request, format=None):
         try:
@@ -157,7 +240,6 @@ class AvatarByMbtiAPIView(APIView):
         except:
             return Response({'status': "Internal Server Error, We'll Check It Later"},
                             status=status.HTTP_500_INTERNAL_SERVER_ERROR)
-
 
 
 class CharactersByMbtiAPIView(APIView):
