@@ -11,6 +11,6 @@ files
 #DB
 .env
 .vscode
-
+db.sqlite3
 #Migrations
 persona/migrations/

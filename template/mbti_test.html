@@ -38,9 +38,9 @@ background-repeat: no-repeat; background-size: cover;">
                         <div class="test-questions comp">
                             {% csrf_token %}
                             {% for q  in questions %}
-                                <div data-v-2e73c643="" class="question {{ q.is_active }}" style="color: #ddd;">
+                                <div data-v-2e73c643="" class="question {{ q.is_active }}" >
                                     <div data-v-2e73c643="" class="statement">
-                                        <span data-v-2e73c643="" id="stmt_cecam0mmt6">{{ q.question |safe }}</span>
+                                        <span data-v-2e73c643="" id="stmt_cecam0mmt6" style="color: #ddd;">{{ q.question |safe }}</span>
                                     </div>
                                     <div data-v-2e73c643="" role="radiogroup" aria-labelledby="stmt_cecam0mmt6"
                                          class="decision">
