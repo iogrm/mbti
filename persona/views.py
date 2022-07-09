@@ -139,13 +139,13 @@ class SignupPage(TemplateView):
                 request.session['email'] = email
                 return redirect('test')
 
-        else:
-            print(form.errors)
-            print('else not users:')
-            error_css = {
-                'input_email_class': "error",
-                'span_email_style': "",
-            }
+            else:
+                print(form.errors)
+                print('else not users:')
+                error_css = {
+                    'input_email_class': "error",
+                    'span_email_style': "",
+                }
 
         context = {
             'form': form,
@@ -165,10 +165,11 @@ class LoginPage(TemplateView):
         if form.is_valid():
             print("login: form is valid")
             email = form.cleaned_data.get("email")
-            user = UserProfile.objects.filter(email__contains=email)[0]
-            if user:
+            users = UserProfile.objects.filter(email__contains=email)
+            if users:
                 # user = LoginForm()
                 # user.email = email
+                user = users[0]
                 request.session['email'] = email
                 print("login mbti: ", user.mbti.mbti)
                 if user.mbti.mbti == "xxxx":

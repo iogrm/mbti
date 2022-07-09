@@ -7533,13 +7533,13 @@ main.q-pt.accessible select {
 }
 
 main.q-pt header {
-    background-color: #33a474;
+    background-color: #999;
     padding: 15px;
     position: relative
 }
 
 main.q-pt header h1 {
-    color: #fff;
+    color: #255;
     font-size: 1.5em;
     line-height: 1.4;
     margin: 20px 0 10px;
