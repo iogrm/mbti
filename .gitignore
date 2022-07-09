@@ -10,6 +10,7 @@ files
 
 #DB
 .env
+.vscode
 
 #Migrations
 persona/migrations/
