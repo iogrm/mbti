@@ -28,6 +28,7 @@ class PassportPage(TemplateView):
             'sir_name': user.sir_name,
             'first_name': user.first_name,
             'mbti': mbti.mbti,
+            'mbti_des': mbti.description,
             'birth': user.birth,
             'isFemale': user.isFemale,
         })
