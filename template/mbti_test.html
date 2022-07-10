@@ -18,13 +18,13 @@
 
 </head>
 
-<body role="document" class="" style="background-image: url(../static/images/bg-blue.jpg); background-attachment: fixed; 
-background-repeat: no-repeat; background-size: cover;">
+<body role="document" class="" >
 
 <div id="main-app" class="main-wrapper int fa">
     <main id="test-app" class="q-pt">
-        <header style="background-color: #0008 ;">
-            <h1>آزمون شخصیت</h1>
+        <header style="background-image: url(../static/images/bg-blue.jpg); background-attachment: fixed; 
+        background-repeat: no-repeat; background-size: cover; ">
+            <h1 style="color: blanchedalmond;">آزمون شخصیت</h1>
         </header>
         <div id="main-app">
                 <div data-chunk="quiz-chunk">
@@ -40,7 +40,7 @@ background-repeat: no-repeat; background-size: cover;">
                             {% for q  in questions %}
                                 <div data-v-2e73c643="" class="question {{ q.is_active }}" >
                                     <div data-v-2e73c643="" class="statement">
-                                        <span data-v-2e73c643="" id="stmt_cecam0mmt6" style="color: #ddd;">{{ q.question |safe }}</span>
+                                        <span data-v-2e73c643="" id="stmt_cecam0mmt6">{{ q.question |safe }}</span>
                                     </div>
                                     <div data-v-2e73c643="" role="radiogroup" aria-labelledby="stmt_cecam0mmt6"
                                          class="decision">

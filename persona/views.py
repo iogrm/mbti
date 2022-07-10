@@ -15,6 +15,7 @@ class PassportPage(TemplateView):
         print()
         user_data = []
         character_data = []
+        loc_data = []
         email = request.session.get('email')
         users = UserProfile.objects.filter(email__contains=email)
         user = users[0]
@@ -36,6 +37,7 @@ class PassportPage(TemplateView):
         place = Place.objects.filter(mbti=mbti)[0]
         user_data.append({
             'name': place.title,
+            'description': place.description,
             'pic': place.picture.url,
         })
 
@@ -101,6 +103,8 @@ def test_page(request):
                 print('else')
 
         analyzed_mbti = get_mbti(traits).lower()
+
+        print('analyzed_mbti: ',analyzed_mbti, traits)
 
         request.session['email'] = email
         user.mbti = Mbti.objects.filter(mbti__contains=analyzed_mbti)[0]
